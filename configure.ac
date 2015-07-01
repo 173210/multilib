@@ -13,6 +13,8 @@ AM_INIT_AUTOMAKE(foreign -Wno-portability)
 
 AC_ARG_WITH(fpu, AS_HELP_STRING(--with-fpu, Use FPU), with_fpu=yes)
 AC_ARG_WITH(thumb, AS_HELP_STRING(--with-thumb, Output thumb code), with_thumb=yes)
+AC_ARG_WITH(headers, AS_HELP_STRING(--with-headers, Specify header files),
+	CFLAGS="$CFLAGS -I$withval")
 
 CFLAGS="$CFLAGS -Wall -nostdlib -mcpu=cortex-a9 -mfpu=neon-fp16"
 multilibdir="$prefix/arm-none-eabi/lib"
