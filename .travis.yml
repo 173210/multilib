@@ -13,6 +13,7 @@ cache:
 
 before_install:
  - set -e
+ - wget -q http://download.sourceforge.net/devkitpro/devkitARMupdate.pl
  - ./devkitARMupdate.pl
  - git clone git://github.com/psp2dev/libs "$PSP2LIBS"
 
