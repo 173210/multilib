@@ -5,15 +5,15 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-sudo: required
+sudo: false
+
+cache:
+  directories:
+    - $DEVKITPRO
 
 before_install:
  - set -e
-
- - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
- - sudo apt-get update -qq -y
- - sudo apt-get install -qq gcc-arm-none-eabi
-
+ - ./devkitARMupdate.pl
  - git clone git://github.com/psp2dev/libs "$PSP2LIBS"
 
 script:
@@ -47,6 +47,9 @@ after_success:
 
 env:
  global:
+  - DEVKITPRO="$HOME/devkitPro"
+  - DEVKITARM="$DEVKITPRO/devkitARM"
+  - PATH="$PATH:$DEVKIARM/bin"
   - PREFIX="$PWD/dist"
   - PSP2LIBS="$PWD/libs"
   - FLAGS="-q --host=arm-none-eabi --with-headers=\"$PSP2LIBS/include\" --prefix=$PREFIX"
