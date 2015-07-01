@@ -23,7 +23,7 @@ script:
 
  - mkdir out
  - cd out
- - ../configure $FLAGS | cat config.log
+ - ../configure $FLAGS | cat ../config.log
  - make install -j4
 
  - mkdir fpu
