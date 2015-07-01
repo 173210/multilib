@@ -8,6 +8,8 @@
 sudo: required
 
 before_install:
+ - set -e
+
  - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
  - sudo apt-get update -qq -y
  - sudo apt-get install -qq gcc-arm-none-eabi
@@ -21,18 +23,18 @@ script:
 
  - mkdir out
  - cd out
- - ../configure $(FLAGS)
+ - ../configure $FLAGS
  - make install -j4
 
  - mkdir fpu
  - cd fpu
- - ../../configure $(FLAGS) --with-fpu
+ - ../../configure $FLAGS --with-fpu
  - make install -j4
  - cd ..
 
  - mkdir thumb
  - cd thumb
- - ../../configure $(FLAGS) --with-thumb
+ - ../../configure $FLAGS --with-thumb
  - make install -j4
 
  - cd $PREFIX/arm-none-eabi/lib
