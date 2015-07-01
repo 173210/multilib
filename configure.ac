@@ -16,7 +16,7 @@ AC_ARG_WITH(thumb, AS_HELP_STRING(--with-thumb, Output thumb code), with_thumb=y
 AC_ARG_WITH(headers, AS_HELP_STRING(--with-headers, Specify header files),
 	CFLAGS="$CFLAGS -I$withval")
 
-CFLAGS="$CFLAGS -Wall -nostdlib -mcpu=cortex-a9 -mfpu=neon-fp16"
+CFLAGS="$CFLAGS -Wall -nostdlib -mtune=cortex-a9 -mfpu=neon-fp16"
 multilibdir="$prefix/arm-none-eabi/lib"
 psp2dir="$multilibdir/psp2"
 if test "$with_fpu" = yes; then
