@@ -24,6 +24,7 @@ script:
  - mkdir out
  - cd out
  - ../configure $FLAGS
+ - cat config.log
  - make install -j4
 
  - mkdir fpu
@@ -46,5 +47,5 @@ after_success:
 env:
  global:
   - PREFIX="$PWD/dist"
-  - FLAGS="-q --enable-silent-rules --host=arm-none-eabi --prefix=$PREFIX"
+  - FLAGS="-q --host=arm-none-eabi --prefix=$PREFIX"
   - secure: "tGv0IG9YUFyKa7S+S5faw4uaVt8dJC7jycAxtYCYvmZeyqVgQjEOHhErggilzJgnUIUkLM5r3uEzum40qL0EkaJ7ZegKt04A7Fg8ZPzJ5bWYC4X9bHkH68Qjj/Q6lJ+qWqk+Jnk9pDAGQCnYlnDMcmjpo9i2FrZOMvA4FW8WNg0anpihHIP3nao7sCfe2x+cYxTV/xkPW4WK4a3LrkB+rlgUi86nRf2voByaQ3zftZ0irTks557+NPHpiLkfDmOK/sdGyCqI4aii7CVeSzhRoIsMO8CgABrRi6F5obWCqBtVlGNDS4n8sXP513a+gmbMqEquYsoqSPjEWjmjAJYUzn+6Sw0/ShJTAkqPswPiZ65CiijRbHb9BFvm4mqUMK/5/Gp66rVZfbs+E1znhZ7erDGqeWeizmFpzRZFBKpjhtnp2a/yb9SLtORHTGGsIcoRWIfNjQ1TXkcmuCqs7X8o7qEhzARBSby1/dCzjDnPTP8/M9nZGoCuLHTmxepkr52brxFylg1jk0sjo/4aKT0ct4D9anl9yRO4FMdf19NETVixm4LA2cjOkbFLquol/SJv+r4d/PQo/+tQ1TFboT6sMuGgnb00J+9s4U0IwzlnxnXyp8Xn4FBwatwdOx3QR9aFWYiYVyrr/q8EABSTEzi/fjJJKJuejhv8NwjjQzlVlw8="
