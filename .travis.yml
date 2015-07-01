@@ -12,7 +12,7 @@ before_install:
  - sudo apt-get update -qq -y
  - sudo apt-get install -qq gcc-arm-none-eabi
 
-script
+script:
  - export FILE=psp2lib-dirty-$(git describe --always).zip
 
  - aclocal
