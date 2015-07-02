@@ -49,7 +49,7 @@ env:
  global:
   - DEVKITPRO="$HOME/devkitPro"
   - DEVKITARM="$DEVKITPRO/devkitARM"
-  - PATH="$PATH:$DEVKIARM/bin"
+  - PATH="$PATH:$DEVKITARM/bin"
   - PREFIX="$PWD/dist"
   - PSP2LIBS="$PWD/libs"
   - FLAGS="-q --host=arm-none-eabi --with-headers=$PSP2LIBS/include --prefix=$PREFIX"
