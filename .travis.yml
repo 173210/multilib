@@ -9,7 +9,7 @@ sudo: false
 
 cache:
   directories:
-    - $DEVKITPRO
+    - $HOME/devkitPro
 
 before_install:
  - set -e
